@@ -11,11 +11,19 @@ import com.example.picture_match.Adapter.Config;
 import com.example.picture_match.Adapter.Level_display_Adapter;
 import com.example.picture_match.R;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class Level_Display_Activity extends AppCompatActivity {
     GridView level_gridview;
     ImageView back;
     TextView timeshow;
-
+    // ArrayList imgarr=new ArrayList();
+    private ArrayList<String> imgArr=new ArrayList<>();
+    private List<String> arrayList=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +32,23 @@ public class Level_Display_Activity extends AppCompatActivity {
         back=findViewById(R.id.back);
         timeshow=findViewById(R.id.timeshow);
 
-        Level_display_Adapter adapter=new Level_display_Adapter(Level_Display_Activity.this);
+        String[] images = new String[0];
+        try {
+            images = getAssets().list("images");
+            imgArr = new ArrayList<String>(Arrays.asList(images));
+            imgArr.remove("android-logo-mask.png");
+            imgArr.remove("android-logo-shine.png");
+            imgArr.remove("clock_font.png");
+            imgArr.remove("progress_font.png");
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        arrayList= imgArr.subList(0,6);
+
+        arrayList.addAll(arrayList);
+        Collections.shuffle(arrayList);
+        Level_display_Adapter adapter=new Level_display_Adapter(Level_Display_Activity.this, arrayList);
         level_gridview.setAdapter(adapter);
     }
 }

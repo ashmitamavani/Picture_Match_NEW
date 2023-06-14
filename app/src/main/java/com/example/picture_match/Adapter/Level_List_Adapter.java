@@ -1,6 +1,7 @@
 package com.example.picture_match.Adapter;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,13 +31,19 @@ public class Level_List_Adapter extends RecyclerView.Adapter<Level_List_Adapter.
 
     @Override
     public void onBindViewHolder(@NonNull Level_List_Adapter.LevellistHolder holder, int position) {
-        holder.level[1].setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(level_listview_activity, Level_Display_Activity.class);
-                level_listview_activity.startActivity(intent);
-            }
-        });
+        for(int i=0;i<10;i++)
+        {
+            int j = i;
+            holder.level[j].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(level_listview_activity, Level_Display_Activity.class);
+                    intent.putExtra("levelNo", j);
+                    System.out.println("level no"+j);
+                    level_listview_activity.startActivity(intent);
+                }
+            });
+        }
 
     }
 
