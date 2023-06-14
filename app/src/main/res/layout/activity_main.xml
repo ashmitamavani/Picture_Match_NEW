@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#289187"
+    android:orientation="vertical"
+    tools:context=".Activity.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="6">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:text="Select mode"
+            android:textColor="#CBEBE8"
+            android:textSize="30dp"
+            android:textStyle="normal" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:src="@drawable/baseline_volume_up_24"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:src="@drawable/baseline_more_vert_24"/>
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/fondo_imagenes"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:background="@drawable/border"
+          android:layout_marginTop="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/no_time_limit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+               android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/box"
+                android:gravity="center"
+                android:text="NO TIME LIMIT"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/normal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/box"
+                android:text="NORMAL"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+               android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="20dp" />
+
+            <TextView
+                android:id="@+id/hard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/box"
+                android:text="HARD"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:layout_marginVertical="15dp"
+                android:layout_marginHorizontal="20dp" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="70dp"
+            android:layout_marginHorizontal="80dp"
+            android:layout_weight="2"
+            android:background="@drawable/border">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/box"
+                android:text="REMOVE ADS"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:layout_marginVertical="15dp"
+                android:layout_marginHorizontal="20dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            android:layout_marginBottom="19dp"
+            android:layout_marginHorizontal="20dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/box"
+                android:text="SHARE"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:layout_marginVertical="15dp"
+                android:layout_marginHorizontal="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/box"
+                android:text="MORE GAMES"
+                android:gravity="center"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:layout_marginVertical="15dp"
+                android:layout_marginHorizontal="20dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"></LinearLayout>
+
+
+</LinearLayout>
