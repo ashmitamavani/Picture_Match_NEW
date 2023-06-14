@@ -14,7 +14,7 @@ import com.example.picture_match.Activity.Level_Display_Activity;
 import com.example.picture_match.Activity.Level_Listview_Activity;
 import com.example.picture_match.R;
 
-public class Level_List_Adapter extends RecyclerView.Adapter<Level_List_Adapter.LevellistHolder> {
+public class Level_List_Adapter extends RecyclerView.Adapter<Level_List_Adapter.LevellistHolder>  {
     Level_Listview_Activity level_listview_activity;
     int id;
     public Level_List_Adapter(Level_Listview_Activity level_listview_activity) {
@@ -31,19 +31,8 @@ public class Level_List_Adapter extends RecyclerView.Adapter<Level_List_Adapter.
 
     @Override
     public void onBindViewHolder(@NonNull Level_List_Adapter.LevellistHolder holder, int position) {
-        for(int i=0;i<10;i++)
-        {
-            int j = i;
-            holder.level[j].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent=new Intent(level_listview_activity, Level_Display_Activity.class);
-                    intent.putExtra("levelNo", j);
-                    System.out.println("level no"+j);
-                    level_listview_activity.startActivity(intent);
-                }
-            });
-        }
+
+
 
     }
 
@@ -52,7 +41,8 @@ public class Level_List_Adapter extends RecyclerView.Adapter<Level_List_Adapter.
         return 6;
     }
 
-    public class LevellistHolder extends RecyclerView.ViewHolder {
+
+    public class LevellistHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView level[]=new TextView[10];
         public LevellistHolder(@NonNull View itemView) {
             super(itemView);
@@ -62,9 +52,27 @@ public class Level_List_Adapter extends RecyclerView.Adapter<Level_List_Adapter.
             {
                 id=itemView.getResources().getIdentifier("level"+i,"id", level_listview_activity.getPackageName());
                 level[i]=itemView.findViewById(id);
-
+                level[i].setOnClickListener(this);
             }
 
+
+        }
+
+        @Override
+        public void onClick(View v) {
+            for (int i=0;i<10;i++)
+            {
+                Intent intent=new Intent(level_listview_activity, Level_Display_Activity.class);
+                intent.putExtra("levelNo", 0);
+                System.out.println("level no"+0);
+                level_listview_activity.startActivity(intent);
+            }
         }
     }
 }
+
+
+/*
+
+
+ */
