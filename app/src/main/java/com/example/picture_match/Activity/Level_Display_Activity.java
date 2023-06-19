@@ -35,6 +35,10 @@ public class Level_Display_Activity extends AppCompatActivity {
         back=findViewById(R.id.back);
         timeshow=findViewById(R.id.timeshow);
         progressBar=findViewById(R.id.progressBar);
+
+
+
+
         int levelno=getIntent().getIntExtra("levelno",1);
 
 

@@ -54,6 +54,7 @@ public class Level_List_Adapter extends RecyclerView.Adapter<Level_List_Adapter.
                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                    Intent intent=new Intent(level_listview_activity,Level_Display_Activity.class);
                    intent.putExtra("levelno",position+1);
+
                    level_listview_activity.startActivity(intent);
                }
            });
